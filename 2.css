@@ -1,0 +1,321 @@
+/* Basic styling for body and layout */
+body {
+    font-family: "Arial";
+    background-color: MediumLightPink;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Header styling */
+header {
+    background-color: MediumLightPink;
+    padding: 20px 0; /* Increase padding for more spacing */
+    text-align: center;
+    position: relative;
+    animation: float 3s ease-in-out infinite; /* Floating animation for the header */
+    clear: both; /* Ensure it doesn't overlap with any floated element */
+    z-index: 1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Slight floating effect */
+    }
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: #004d40;
+    margin: 20px 0;
+ 
+}
+
+/* Navigation styling */
+nav {
+    background-color: #ffb3c1;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    clear: both; /* Ensure it doesn't overlap with the header */
+    position:relative;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+
+}
+
+/* Ensure space between header and navigation */
+nav {
+    margin-top: 10px;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px; /* Space for the hover underline */
+    transition: color 0.3s, transform 0.3s; /* Smooth color change and transformation */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6f61;
+    transition: width 0.3s ease; /* Slide in underline */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Underline grows on hover */
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+    transform: scale(1.1); /* Slight pop effect */
+}
+main {
+    padding-top: 60px; /* Adds space below the fixed nav */
+}
+
+  
+
+/* Main Content using Flexbox */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    animation: fadeInContent 1s ease-out;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content wrapper for intro and sidebar */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.intro {
+    flex: 2;
+    padding: 10px;
+    background-color: Pink;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sidebar {
+    flex: 1;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInRight 1.2s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f1b2b2;
+    color: #333;
+}
+
+td {
+    background-color: silver;
+    color: #333;
+}
+
+
+/* Product section using Flexbox */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    margin-top: 40px;
+}
+
+.product-item {
+    flex: 1 1 calc(48% - 10px);
+    margin-bottom: 20px;
+    background-color: silver;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 40%;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+
+.product-item h3 {
+    color: #004d40;
+    font-size: 1.5em;
+    margin-top: 0;
+    text-align: left;
+}
+
+.product-item p {
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 10px;
+}
+/* Blog Posts Styling */
+.blog-container {
+    padding: 10px;
+}
+
+.blog-post {
+    background-color: silver;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideInBottom 1s ease-out;
+}
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Footer using Flexbox */
+footer {
+    background-color: #f1b2b2;
+    color: #004d40;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+}
+
+footer:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 1s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
+}
+
+/* Optional media query for responsiveness */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .intro, .sidebar {
+        width: 100%;
+    }
+
+    .product-item, .blog-post {
+        flex: 1 1 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
